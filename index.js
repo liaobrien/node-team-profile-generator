@@ -4,7 +4,6 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const jest = require("jest");
 
 teamMembers = [];
 
@@ -103,7 +102,29 @@ function createTeamMember(questions, member) {
 
                   const newMember = new member(response.name, response.id, response.email, extra);
                   teamMembers.push(newMember);
+                  createMoreMembers();
             })
 }
 
 createTeamMember(managerQuestions, Manager);
+
+function createMoreMembers() {
+      inquirer
+            .prompt(teamAdd)
+            .then((response) => {
+                  switch (response.member) {
+                        case "Engineer":
+                              createTeamMember(engineerQuestions, Engineer);
+                              break;
+                        case "Intern":
+                              createTeamMember(internQuestions, Intern);
+                              break;
+                        default:
+                              const data = render(teamMembers);
+                              fs.writeFile("./dist/index.html", data, (err) => {
+                                    err ? console.log(error) : console.log("Your page is created!");
+                              })
+
+                  }
+            })
+}
