@@ -4,6 +4,7 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const render = require("./src/createHTML")
 
 teamMembers = [];
 
@@ -43,7 +44,7 @@ const engineerQuestions = [
       },
       {
             type: "input",
-            message: "What is the engineer's address?",
+            message: "What is the engineer's email address?",
             name: "email",
       },
       {
@@ -66,7 +67,7 @@ const internQuestions = [
       },
       {
             type: "input",
-            message: "What is the intern's address?",
+            message: "What is the intern's email address?",
             name: "email",
       },
       {
