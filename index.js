@@ -6,6 +6,8 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const jest = require("jest");
 
+teamMembers = [];
+
 const managerQuestions = [
       {
             type: "input",
@@ -78,5 +80,30 @@ const internQuestions = [
 const teamAdd = {
       type: "list",
       message: "What type of team member would you like to add?",
-      choices: ["Engineer", "Intern", "None"]
+      choices: ["Engineer", "Intern", "None"],
+      name: "member"
 }
+
+function createTeamMember(questions, member) {
+      let extra;
+      inquirer
+            .prompt(questions)
+            .then((response) => {
+                  console.log(response);
+                  switch (member) {
+                        case Engineer:
+                              extra = response.github;
+                              break;
+                        case Intern:
+                              extra = response.school;
+                              break;
+                        default:
+                              extra = response.office;
+                  }
+
+                  const newMember = new member(response.name, response.id, response.email, extra);
+                  teamMembers.push(newMember);
+            })
+}
+
+createTeamMember(managerQuestions, Manager);
