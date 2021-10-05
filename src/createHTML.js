@@ -49,7 +49,7 @@ const createIntern = (intern) => {
       </div>`;
 }
 
-function generateHTML(data) {
+function generateCards(data) {
   cardsArr = [];
 
   for (let i = 0; i < data.length; i++) {
@@ -81,7 +81,7 @@ function generateHTML(data) {
   return createTeam;
 }
 
-module.exports = generateHTML;
+module.exports = generateCards;
 
 
 
