@@ -80,7 +80,7 @@ const internQuestions = [
 const teamAdd = {
       type: "list",
       message: "What type of team member would you like to add?",
-      choices: ["Engineer", "Intern", "None"],
+      choices: ["Engineer", "Intern", "I'm Done"],
       name: "member"
 }
 
@@ -89,7 +89,6 @@ function createTeamMember(questions, member) {
       inquirer
             .prompt(questions)
             .then((response) => {
-                  console.log(response);
                   switch (member) {
                         case Engineer:
                               extra = response.github;
@@ -123,7 +122,7 @@ function createMoreMembers() {
                         default:
                               const data = render(teamMembers);
                               fs.writeFile("./dist/index.html", data, (err) => {
-                                    err ? console.log(error) : console.log("Your page is created!");
+                                    err ? console.log(error) : console.log("Team rendered successfully!");
                               })
 
                   }
