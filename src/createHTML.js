@@ -3,14 +3,14 @@ const createManager = (manager) => {
         <div class="card-header bg-primary text-white h2">
           ${manager.name}
           <br />
-          Manager
+          <i class="fas fa-mug-hot"></i>Manager
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">${manager.id}</li>
+          <li class="list-group-item">ID: ${manager.id}</li>
           <li class="list-group-item">
             Email: <a href="mailto:${manager.email}">${manager.email}</a>
           </li>
-          <li class="list-group-item">${manager.office}</li>
+          <li class="list-group-item">Office: ${manager.office}</li>
         </ul>
       </div>`;
 }
@@ -20,14 +20,14 @@ const createEngineer = (engineer) => {
         <div class="card-header bg-primary text-white h2">
           ${engineer.name}
           <br />
-          Engineer
+          <i class="fas fa-glasses"></i>Engineer
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">${engineer.id}</li>
+          <li class="list-group-item">ID: ${engineer.id}</li>
           <li class="list-group-item">
             Email: <a href="mailto:${engineer.email}">${engineer.email}</a>
           </li>
-          <li class="list-group-item">${engineer.github}</li>
+          <li class="list-group-item">GitHub: <a href="http://github.com/${engineer.github}">${engineer.github}</a></li>
         </ul>
       </div>`;
 }
@@ -37,14 +37,14 @@ const createIntern = (intern) => {
         <div class="card-header bg-primary text-white h2">
           ${intern.name}
           <br />
-          Intern
+          <i class="fas fa-user-graduate"></i>Intern
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">${intern.id}</li>
+          <li class="list-group-item">ID: ${intern.id}</li>
           <li class="list-group-item">
             Email: <a href="mailto:${intern.email}">${intern.email}</a>
           </li>
-          <li class="list-group-item">${intern.school}</li>
+          <li class="list-group-item">School: ${intern.school}</li>
         </ul>
       </div>`;
 }
