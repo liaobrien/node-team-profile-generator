@@ -1,9 +1,9 @@
 const createManager = (manager) => {
-      return `<div class="card mx-5" style="width: 18rem">
-        <div class="card-header bg-primary text-white h2">
+  return `<div class="card mx-5 my-3" style="width: 18rem">
+        <div class="card-header bg-info text-white h2">
           ${manager.name}
           <br />
-          <i class="fas fa-mug-hot"></i>Manager
+          <i class="fas fa-mug-hot"></i> Manager
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${manager.id}</li>
@@ -16,11 +16,11 @@ const createManager = (manager) => {
 }
 
 const createEngineer = (engineer) => {
-      return `<div class="card mx-5" style="width: 18rem">
-        <div class="card-header bg-primary text-white h2">
+  return `<div class="card mx-5 my-3" style="width: 18rem">
+        <div class="card-header bg-info text-white h2">
           ${engineer.name}
           <br />
-          <i class="fas fa-glasses"></i>Engineer
+          <i class="fas fa-glasses"></i> Engineer
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${engineer.id}</li>
@@ -33,11 +33,11 @@ const createEngineer = (engineer) => {
 }
 
 const createIntern = (intern) => {
-      return `<div class="card mx-5" style="width: 18rem">
-        <div class="card-header bg-primary text-white h2">
+  return `<div class="card mx-5 my-3" style="width: 18rem">
+        <div class="card-header bg-info text-white h2">
           ${intern.name}
           <br />
-          <i class="fas fa-user-graduate"></i>Intern
+          <i class="fas fa-user-graduate"></i> Intern
         </div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">ID: ${intern.id}</li>
@@ -50,35 +50,35 @@ const createIntern = (intern) => {
 }
 
 function generateHTML(data) {
-      cardsArr = [];
+  cardsArr = [];
 
-      for (let i = 0; i < data.length; i++) {
-            const employee = data[i];
-            const role = employee.getRole();
+  for (let i = 0; i < data.length; i++) {
+    const employee = data[i];
+    const role = employee.getRole();
 
-            if (role === 'Manager') {
-                  const managerCard = createManager(employee);
+    if (role === 'Manager') {
+      const managerCard = createManager(employee);
 
-                  cardsArr.push(managerCard);
-            }
+      cardsArr.push(managerCard);
+    }
 
-            if (role === 'Engineer') {
-                  const engineerCard = createEngineer(employee);
+    if (role === 'Engineer') {
+      const engineerCard = createEngineer(employee);
 
-                  cardsArr.push(engineerCard);
-            }
+      cardsArr.push(engineerCard);
+    }
 
-            if (role === 'Intern') {
-                  const internCard = createIntern(employee);
+    if (role === 'Intern') {
+      const internCard = createIntern(employee);
 
-                  cardsArr.push(internCard);
-            }
-      }
+      cardsArr.push(internCard);
+    }
+  }
 
-      const teamCards = cardsArr.join('');
+  const teamCards = cardsArr.join('');
 
-      const createTeam = createHTMLPage(teamCards)
-      return createTeam;
+  const createTeam = createHTMLPage(teamCards)
+  return createTeam;
 }
 
 module.exports = generateHTML;
@@ -86,7 +86,7 @@ module.exports = generateHTML;
 
 
 function createHTMLPage(teamCards) {
-      return `
+  return `
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -103,7 +103,7 @@ function createHTMLPage(teamCards) {
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid bg-danger text-white">
+    <div class="jumbotron jumbotron-fluid bg-dark text-white">
       <div class="container">
         <h1 class="display-4 text-center">My Team</h1>
       </div>
